@@ -33,6 +33,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_outlined,
+            color: Theme.of(context).primaryColor,
+          ),
+        ),
         title: Text(
           'Register',
           style: Theme.of(context).textTheme.titleSmall,
@@ -83,7 +92,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   options: CarouselOptions(
                     enlargeStrategy: CenterPageEnlargeStrategy.zoom,
                     enlargeCenterPage: true,
-                    height: 161.h,viewportFraction: .4.w,
+                    height: 161.h,
+                    viewportFraction: .4.w,
+                    initialPage: 1,
                   ),
                 ),
                 SizedBox(
